@@ -311,6 +311,14 @@
   \medskip\normalsize
 }
 
+\newcommand{\cvcertificate}[3]{%
+  {\large\color{emphasis}#1\par}
+  \smallskip\normalsize
+  \ifstrequal{#3}{}{}{{\small\makebox[0.3\linewidth][l]{\faCalendar~#3}}}%
+  \ifstrequal{#2}{}{}{{\small\makebox[0.7\linewidth][l]{\textbf{\color{accent}#2}}}}\par
+  \medskip\normalsize
+}
+
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
   \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
@@ -321,6 +329,10 @@
 
 \newcommand{\cvtag}[1]{%
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+\newcommand{\cvredtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex, fill=accent]{\color{white}{#1}};
 }
 
 \newcommand{\cvskill}[2]{%
